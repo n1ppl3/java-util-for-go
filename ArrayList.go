@@ -14,6 +14,11 @@ func (list *ArrayList) Init() {
 	list.array = make([]interface{}, 0, 0)
 }
 
+func (list *ArrayList) InitFromSlice(slice []interface{}) {
+	list.array = slice
+	list.size = len(slice)
+}
+
 
 func (list *ArrayList) Size() int {
 	return list.size

@@ -44,13 +44,7 @@ func TestRemoveByIndexOneSizeArray(t *testing.T) {
 
 func TestRemoveByIndexFirstElement(t *testing.T) {
 	arrayList := ArrayList{}
-	arrayList.Init()
-	fmt.Println("arrayList:", arrayList)
-
-	arrayList.Add(1)
-	arrayList.Add(2)
-	arrayList.Add(3)
-	arrayList.Add(4)
+	arrayList.InitFromSlice(IntSliceToInterfaceSlice([]int{1,2,3,4}))
 	fmt.Println("arrayList:", arrayList)
 
 	arrayList.RemoveByIndex(0)
@@ -59,13 +53,7 @@ func TestRemoveByIndexFirstElement(t *testing.T) {
 
 func TestRemoveByIndexLastElement(t *testing.T) {
 	arrayList := ArrayList{}
-	arrayList.Init()
-	fmt.Println("arrayList:", arrayList)
-
-	arrayList.Add(1)
-	arrayList.Add(2)
-	arrayList.Add(3)
-	arrayList.Add(4)
+	arrayList.InitFromSlice(IntSliceToInterfaceSlice([]int{1,2,3,4}))
 	fmt.Println("arrayList:", arrayList)
 
 	arrayList.RemoveByIndex(3)
