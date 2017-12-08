@@ -1,7 +1,7 @@
 package util
 
-type List interface {
 
+type List interface {
 
 	Size() int
 
@@ -39,7 +39,7 @@ type List interface {
 
 	RemoveByIndex(index int)
 
-	// int indexOf(Object o);
+	IndexOf(object interface{}) int
 
 	// int lastIndexOf(Object o);
 }
