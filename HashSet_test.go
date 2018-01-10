@@ -6,7 +6,7 @@ import "testing"
 // size, isEmpty, contains, add, remove
 func TestSet(t *testing.T) {
 	var set Set
-	set = newHashSet()
+	set = NewHashSet()
 
 	str := "myString"
 
