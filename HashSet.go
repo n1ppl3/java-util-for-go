@@ -7,7 +7,7 @@ type hashSet struct {
 	hashMap map[interface{}]int
 }
 
-func newHashSet() *hashSet {
+func NewHashSet() *hashSet {
 	hashSet := hashSet{}
 	hashSet.Init()
 	return &hashSet
