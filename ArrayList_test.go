@@ -6,33 +6,31 @@ import (
 )
 
 func TestList(t *testing.T) {
-	var arrayList ArrayList
-	arrayList = ArrayList{}
+	var list List
+	list = NewArrayList()
 
-	arrayList.Init()
-	fmt.Println("arrayList:", arrayList)
+	fmt.Println("list:", list)
 
 	str := "myString"
 
-	assertEquals(t, 0, arrayList.Size())
-	assertEquals(t, true, arrayList.IsEmpty())
-	assertEquals(t, false, arrayList.Contains(str))
+	assertEquals(t, 0, list.Size())
+	assertEquals(t, true, list.IsEmpty())
+	assertEquals(t, false, list.Contains(str))
 
-	arrayList.Add(str)
-	fmt.Println("arrayList:", arrayList)
+	list.Add(str)
+	fmt.Println("list:", list)
 
-	assertEquals(t, 1, arrayList.Size())
-	assertEquals(t, false, arrayList.IsEmpty())
-	assertEquals(t, true, arrayList.Contains(str))
+	assertEquals(t, 1, list.Size())
+	assertEquals(t, false, list.IsEmpty())
+	assertEquals(t, true, list.Contains(str))
 
-	arrayList.Remove(str)
-	assertEquals(t, false, arrayList.Contains(str))
+	list.Remove(str)
+	assertEquals(t, false, list.Contains(str))
 }
 
 
 func TestRemoveByIndexOneSizeArray(t *testing.T) {
-	arrayList := ArrayList{}
-	arrayList.Init()
+	arrayList := NewArrayList()
 	fmt.Println("arrayList:", arrayList)
 
 	arrayList.Add(18950)
@@ -43,8 +41,7 @@ func TestRemoveByIndexOneSizeArray(t *testing.T) {
 }
 
 func TestRemoveByIndexFirstElement(t *testing.T) {
-	arrayList := ArrayList{}
-	arrayList.InitFromSlice(IntSliceToInterfaceSlice([]int{1,2,3,4}))
+	arrayList := InitFromSlice(IntSliceToInterfaceSlice([]int{1,2,3,4}))
 	fmt.Println("arrayList:", arrayList)
 
 	arrayList.RemoveByIndex(0)
@@ -52,8 +49,7 @@ func TestRemoveByIndexFirstElement(t *testing.T) {
 }
 
 func TestRemoveByIndexLastElement(t *testing.T) {
-	arrayList := ArrayList{}
-	arrayList.InitFromSlice(IntSliceToInterfaceSlice([]int{1,2,3,4}))
+	arrayList := InitFromSlice(IntSliceToInterfaceSlice([]int{1,2,3,4}))
 	fmt.Println("arrayList:", arrayList)
 
 	arrayList.RemoveByIndex(3)
