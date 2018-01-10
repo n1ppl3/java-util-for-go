@@ -3,34 +3,40 @@ package util
 const PRESENT int = 7
 
 
-type HashSet struct {
+type hashSet struct {
 	hashMap map[interface{}]int
 }
 
-func (set *HashSet) Init() {
+func newHashSet() *hashSet {
+	hashSet := hashSet{}
+	hashSet.Init()
+	return &hashSet
+}
+
+func (set *hashSet) Init() {
 	set.hashMap = make(map[interface{}]int)
 }
 
-func (set *HashSet) Size() int {
+func (set *hashSet) Size() int {
 	return len(set.hashMap)
 }
 
-func (set *HashSet) IsEmpty() bool {
+func (set *hashSet) IsEmpty() bool {
 	return set.Size() == 0
 }
 
-func (set *HashSet) Contains(object interface{}) bool {
+func (set *hashSet) Contains(object interface{}) bool {
 	return set.hashMap[object] == PRESENT
 }
 
-func (set *HashSet) Add(object interface{}) {
+func (set *hashSet) Add(object interface{}) {
 	set.hashMap[object] = PRESENT
 }
 
-func (set *HashSet) Remove(object interface{}) {
+func (set *hashSet) Remove(object interface{}) {
 	delete(set.hashMap, object)
 }
 
-func (set *HashSet) Clear() {
+func (set *hashSet) Clear() {
 	set.Init()
 }
